@@ -1,56 +1,67 @@
 [
     {
-        "track": "Oseanwavy & Young Shimmy - Maybe You Know",
+        "artist": "Oseanwavy & Young Shimmy",
+        "track": "Maybe You Know",
         "youtube": "https://www.youtube.com/embed/SF3i5KIJw28?si=tLCnO-FYBicW0OlZ",
         "album_arts": "Young_Shimmy_All_Hands_On_Deck.png"
     },
     {
-        "track": "Oseanwavy & Young Shimmy - Wide Awake",
+        "artist": "Oseanwavy & Young Shimmy",
+        "track": "Wide Awake",
         "youtube": "https://www.youtube.com/embed/Y1dWFHkrUfk?si=GD-sm_SlEFPBkLNV",
         "album_arts": "Young_Shimmy_All_Hands_On_Deck.png"
     },
     {
-        "track": "Dok2 - Wave is Coming (feat. COLE & Illson)",
+        "artist": "Dok2",
+        "track": "Wave is Coming (feat. COLE & Illson)",
         "youtube": "https://www.youtube.com/embed/GWQe1LZcGxc?si=pNerCtJfb8dsF_42",
         "album_arts": "Wave is Coming Dok2.png"
     },
     {
-        "track": "Matrix Unni - New Era",
+        "artist": "Matrix Unni",
+        "track": "New Era",
         "youtube": "https://www.youtube.com/embed/K8T89GNGbq8?si=hVt7qw__46_RKD4h",
-        "album_arts": "Matrix Unni - Era.png"
+        "album_arts": "Matrix Unni - New Era.png"
     },
     {
-        "track": "Illson - Foolish",
+        "artist": "Illson",
+        "track": "Foolish",
         "youtube": "https://www.youtube.com/embed/FV5MpM2swh0?si=p__OnnRmP-_rnMNP",
         "album_arts": "Endless Summer.png"
     },
     {
-        "track": "Illson - 평행선 (Feat. ISA, Cole)",
+        "artist": "Illson",
+        "track": "평행선 (Feat. ISA, Cole)",
         "youtube": "https://www.youtube.com/embed/cMWr42XkWcw?si=uF5c37xObCUool8n",
         "album_arts": "Endless Summer.png"
     },
     {
-        "track": "Illson - Thinkin Bout You",
+        "artist": "Illson",
+        "track": "Thinkin Bout You",
         "youtube": "https://www.youtube.com/embed/t4ggkwH8PPg?si=49QKb577vWzVVHcV",
         "album_arts": "Thinkin Bout You.png"
     },
     {
-        "track": "Illson - Thoughts",
+        "artist": "Illson",
+        "track": "Thoughts",
         "youtube": "https://www.youtube.com/embed/ishzyedjogw?si=5dYgaCM6WQago6OI",
         "album_arts": "Endless Summer.png"
     },
     {
-        "track": "Illson - Man of The Year (Feat. Dok2 & Oseanwavy)",
+        "artist": "Illson",
+        "track": "Man of The Year (Feat. Dok2 & Oseanwavy)",
         "youtube": "https://www.youtube.com/embed/spmUmxBilGs?si=Edf7_vmBLOda5Dkx",
         "album_arts": "Lost and Jealous.png"
     },
     {
-        "track": "Illson - One Thousand",
+        "artist": "Illson",
+        "track": "One Thousand",
         "youtube": "https://www.youtube.com/embed/p1xrClsVA7I?si=O4kEh-xi07Lidc5m",
         "album_arts": "Lost and Jealous.png"
     },
     {
-        "track": "Illson - 못할짓 (Bad Behavior)",
+        "artist": "Illson",
+        "track": "못할짓 (Bad Behavior)",
         "youtube": "https://www.youtube.com/embed/L9yLFJ-UtiQ?si=6MMl-HEbxSF5fCwP",
         "album_arts": "DoubleK Illson Bad Behavior.png"
     }

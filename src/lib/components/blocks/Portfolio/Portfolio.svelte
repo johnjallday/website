@@ -4,7 +4,7 @@
 	import TabProd from "./TabProd.svelte";
 	import TabMix from "./TabMix.svelte";
 	
-
+	//Loads Tab Mix and TabProd.svelte
 	let items = [
 		{ label: "Prod/Writing",
 		 value: 1,
@@ -16,13 +16,9 @@
 		}
   ];
 
-
-  
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="/styles.css">
-</svelte:head>
+
 <main>
 
   <Tabs {items} />
