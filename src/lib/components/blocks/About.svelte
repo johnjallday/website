@@ -2,7 +2,6 @@
 	//import Card from '$lib/components/parts/Card.svelte'; 	
 </script>
 
-<h1>About</h1>
 	<p> Welcome </p>
 	<p> This is a continuous development project for myself</p>
 	<p> I write music + I like to learn and code </p>

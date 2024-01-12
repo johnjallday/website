@@ -11,9 +11,5 @@
 <slot />
 <Footer />
 
-<style>
-  /* Global styles can also go here */
-	    body, * {
-			font-family: 'Raleway', sans-serif;
-			}
-</style>
+
+

@@ -1,6 +1,7 @@
-// src/routes/blog/[slug]/+page.js
-export async function load({ params }) {
-	const post = await import(`../${params.slug}.md`);
+import { error } from '@sveltejs/kit';
+/** @type {import('./$types').PageLoad} */
+export async function load({ params }) {	
+	const post = await import(`./${params.slug}.md`);
 	const { title, date } = post.metadata;
 	const content = post.default;
 
@@ -9,4 +10,7 @@ export async function load({ params }) {
 		title,
 		date
 	};
+
+
+	error(404, 'Not found');
 }
