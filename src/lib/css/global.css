@@ -1,0 +1,41 @@
+main {
+		display: grid;
+		gap: 10px;
+		height: 100vh;
+		padding: 20px;
+}
+
+    /* Define a global font */
+body {
+    font-family: 'Raleway', sans-serif;
+		font-weight: 500;
+    background-color: #3a2a00;
+}
+
+h1 {
+		padding: 10px;
+		font-family: 'Poppins', sans-serif; /* Use the Poppins font for h1 */
+		font-weight: 800;
+		font-size: 50px;
+		color: #3a2a00;
+        /* Add any other styling you need for h1 */
+}
+
+h2 {
+		font-family: 'Poppins', sans-serif; /* Use the Poppins font for h1 */
+		font-weight: 700;
+		font-size: 30px;
+		color: #3a2a00;
+}
+
+.service, .about, .portfolio, .blogs, .updates {
+		border: 2px solid black;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		border-radius: 10px; /* Adjust the value to control the roundness */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		background-color: #ffe9b0;
+		opacity: 95%;
+		color: #3a2a00;
+}

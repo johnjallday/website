@@ -1,12 +1,11 @@
 
 <script>
-  // No changes to your script
+	import ContactDialog from '$lib/components/parts/ContactDialog.svelte'
 </script>
 
 <div class="services">
-  <p>multitrack/2Track-Mix&Master</p>
-  <p>If you are Interested Contact</p>
-  <p>johnj.alldayok@gmail.com</p>
+  <p>Multitrack/2Track-Mix&Master</p>
+	<ContactDialog/>
 </div>
 
 

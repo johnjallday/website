@@ -1,0 +1,7 @@
+#contactButton {
+  background-color: #3a2a00;
+  color: #ffe9b0;
+	font-size: 18px;
+  border-radius: 8px; /* Adjust the value to control the roundness of the edges */
+}
+

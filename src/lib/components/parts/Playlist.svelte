@@ -1,6 +1,8 @@
 
 <script>
-  import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
+
+	import '$lib/css/playlist.css';
 	let portfolio =[];
 	let selectedTrack = null;
 	let youtube_url = '';
@@ -21,7 +23,7 @@
 <table class="playlist-table">
 	<thead>
 		<tr>
-			<th>""</th>
+			<th></th>
 			<th>Artist</th>
 			<th>Track</th>
 		</tr>
@@ -46,29 +48,3 @@
   </iframe>
 </div> 
   
-
-
-<style>
-
-  .playlist-table {
-		align: left;
-    width: 100%;
-    margin-top: 0px;
-		border-collapse: collapse;
-		display: block;
-		height: 250px;
-		overflow-y: scroll;
-	}
-	.playlist-table th{
-		text-align:left;
-	}
-
-
-  .album-art {
-    width: 50px;
-    height: 50px;
-  }
-
-
-</style>
-

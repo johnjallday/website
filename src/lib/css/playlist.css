@@ -1,0 +1,55 @@
+
+
+.playlist-table {
+	align: left;
+	width: 100%;
+	margin-top: 0px;
+	border-collapse: collapse;
+	display: block;
+	height: 250px;
+	overflow-y: scroll;
+	background-color: #3a2a00;
+	color: #fff4d7;
+}
+.playlist-table th{
+	text-align:center;
+}
+.playlist-table td {
+    padding: 2px; /* Add padding to td elements */
+}
+
+.playlist-table td:first-child {
+    width: 25px;
+}
+
+/* Set specific width for the second column */
+.playlist-table td:nth-child(2) {
+    width: 45%; /* Adjust the width as needed */
+}
+
+/* Set specific width for the third column */
+.playlist-table td:nth-child(3) {
+    width: 55%; /* Adjust the width as needed */
+}
+
+.album-art {
+	width: 50px;
+	height: 50px;
+}
+
+/* Set the color of the scrollbar */
+.playlist-table::-webkit-scrollbar {
+    width: 12px;
+}
+
+.playlist-table::-webkit-scrollbar-thumb {
+    background-color: #614600;
+}
+
+.playlist-table::-webkit-scrollbar-track {
+    background-color: #fff4d7;
+}
+/* Set the background color of the selected item */
+.playlist-table tr.active {
+    background-color: #755500;
+}
