@@ -1,11 +1,11 @@
-import adapter from '@sveltejs/adapter-vercel';
+import vercel from '@sveltejs/adapter-vercel';
 import { mdsvex } from 'mdsvex';
 import { preprocessMeltUI, sequence } from '@melt-ui/pp'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: vercel(),
 	},
 
 	extensions: ['.svelte', '.md'],
