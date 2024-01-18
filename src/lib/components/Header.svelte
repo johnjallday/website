@@ -30,7 +30,12 @@
     <a href="https://instagram.com/johnj.alldayok">
       <img src="/Instagram_Glyph_Black.png" alt="instagram" width="25" height="25" />
     </a>
-  </nav>
+	</nav>
+
+	<nav class="page_nav">
+		<a href="/">Main</a>
+		<a href="/logs">Logs</a>
+	</nav>
 </header>
 
 <style>
