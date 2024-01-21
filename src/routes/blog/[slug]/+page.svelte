@@ -1,10 +1,9 @@
-<!-- src/routes/blog/[slug]/+page.svelte -->
 <script>
 	export let data;
 </script>
 
-<article>
-	<h1>{data.title}</h1>
-	<p>Published: {data.date}</p>
-	<svelte:component this={data.content} />
-</article>
+<div class="block">
+
+	<h1>{data.post.title}</h1>
+	{@html data.post.content}
+</div>

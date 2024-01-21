@@ -2,6 +2,7 @@
 <!-- Header.svelte -->
 <script>
   export let showBackground = false;
+	import SocialNav from '$lib/components/parts/SocialNav.svelte'; 
 </script>
 
 <header class:has-background={showBackground}>
@@ -21,20 +22,12 @@
     </div>
   </div>
 
-	<nav class="container">
-		<a href="/"><img src="/home-button.svg" height="25"></a>
-    <a href="/contact" title="email icons"><img src="/mail-inbox-app.png" height="25"></a>
-    <a href="https://github.com/johnjallday/">
-      <img src="/github-mark.png" alt="GitHub Mark" width="25" height="25" />
-    </a>
-    <a href="https://instagram.com/johnj.alldayok">
-      <img src="/Instagram_Glyph_Black.png" alt="instagram" width="25" height="25" />
-    </a>
-	</nav>
+	<SocialNav/>
 
 	<nav class="page_nav">
 		<a href="/">Main</a>
-		<a href="/logs">Logs</a>
+		<a href="/projects">Projects</a>
+		<a href="/blog">Blog</a>
 	</nav>
 </header>
 

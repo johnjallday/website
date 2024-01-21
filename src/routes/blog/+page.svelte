@@ -1,7 +1,12 @@
+
 <script>
-	import BlogHeader from '$lib/components/parts/BlogHeader.svelte'
+	export let data;
 </script>
 
-<BlogHeader />
-<h1>blog</h1>
-<p>how do i fetch the latest?</p>
+
+<h1>blog.</h1>
+{#each data.summaries as { slug, title}}
+	<div class="block">
+		<a href="/blog/{slug}">{title}</a>
+	</div>
+{/each}

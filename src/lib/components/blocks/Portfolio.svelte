@@ -14,21 +14,24 @@
   const handleClick = tabValue => () => (activeTabValue = tabValue);
 </script>
 
-<ul>
-  {#each items as item}
-    <li class={activeTabValue === item.value ? 'active' : ''}>
-      <span on:click={handleClick(item.value)}>{item.label}</span>
-    </li>
-  {/each}
-</ul>
 
-{#each items as item}
-  {#if activeTabValue === item.value}
-      {#if item.component}
-        <svelte:component this={item.component} portfolio_path={item.portfolio_path}/>
+<div class="block prtfolio">
+	<h2>Portfolio.</h2>
+	<ul>
+  	{#each items as item}
+    	<li class={activeTabValue === item.value ? 'active' : ''}>
+      	<span on:click={handleClick(item.value)}>{item.label}</span>
+    	</li>
+  	{/each}
+	</ul>
+
+	{#each items as item}
+  	{#if activeTabValue === item.value}
+    	{#if item.component}
+      	  <svelte:component this={item.component} portfolio_path={item.portfolio_path}/>
       {/if}
-  {/if}
-{/each}
-
+ 	 {/if}
+	{/each}
+</div>
 
 

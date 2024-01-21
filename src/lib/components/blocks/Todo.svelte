@@ -1,9 +1,16 @@
 
 <script>
-	//  import { cn } from '$docs/utils';
   import { createTabs, melt } from '@melt-ui/svelte';
-  import { cubicInOut } from 'svelte/easing';
   import { crossfade } from 'svelte/transition';
+  import { cubicInOut } from 'svelte/easing';
+  import { onMount } from 'svelte';
+
+  let todo_list = {};
+
+  onMount(async () => {
+    const response = await fetch('/todo_list.json');
+    todo_list = await response.json();
+  });
 
   const {
     elements: { root, list, content, trigger },
@@ -11,9 +18,6 @@
   } = createTabs({
     defaultValue: 'tab-1',
   });
-
-  let className = '';
-  export { className as class };
 
   const triggers = [
     { id: 'tab-1', title: 'Music' },
@@ -27,47 +31,26 @@
   });
 </script>
 
-<div use:melt={$root}>
-  <div
-    use:melt={$list}
-    class="flex shrink-0 overflow-x-auto bg-neutral-100
-    data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-r"
-    aria-label="Manage your account"
-  >
+<div class="block todo" use:melt={$root}>
+  <h2>To-do list.</h2>
+  <div use:melt={$list}>
     {#each triggers as triggerItem}
       <button use:melt={$trigger(triggerItem.id)} class="trigger relative">
         {triggerItem.title}
         {#if $value === triggerItem.id}
-          <div
-            in:send={{ key: 'trigger' }}
-            out:receive={{ key: 'trigger' }}
-            class="absolute bottom-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-magnum-400"
-          />
+          <div in:send={{ key: 'trigger' }} out:receive={{ key: 'trigger' }} />
         {/if}
       </button>
     {/each}
   </div>
-	
-	<div use:melt={$content('tab-1')} class="grow bg-white p-5">
-    <p class="mb-5 leading-normal text-neutral-900">
-			On-Going Demos
-		</p>
-		<p> Kelly</p>
 
-  </div>
-  <div use:melt={$content('tab-2')} class="grow bg-white p-5">
-    <p class="mb-5 leading-normal text-neutral-900">
-    	Load todo_list.json to here
-		</p>
-
-  </div>
-  <div use:melt={$content('tab-3')} class="grow bg-white p-5">
-    <p class="mb-5 leading-normal text-neutral-900">
-			Reascript
-    </p>
-
-
-  </div>
+  {#each triggers as triggerItem}
+    <div use:melt={$content(triggerItem.id)} class="grow bg-white p-5">
+      {#if todo_list[triggerItem.title]}
+        {#each todo_list[triggerItem.title].todo as item}
+          <p>{item}</p>
+        {/each}
+      {/if}
+    </div>
+  {/each}
 </div>
-
-

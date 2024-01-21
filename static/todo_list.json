@@ -1,0 +1,14 @@
+{
+  "Music": {
+    "todo": ["demo - kelly", "demo - imin"]
+  },
+  "Website": {
+    "todo": ["update manager", "Contact Page", "Async Load Blog Json", "To-do list show everything", "domain", "Fractal CSS", "Header Redesign"]
+  },
+  "Programming": {
+    "todo": ["backend duckdb setup", "auto emailer", "discord json sync"]
+  },
+	"Personal":{
+		"todo": ["youtube-spendlog-v0.0.1"]
+	}
+}

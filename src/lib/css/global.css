@@ -28,7 +28,7 @@ h2 {
 		color: #3a2a00;
 }
 
-.service, .about, .portfolio, .blogs, .updates {
+.block {
 		border: 2px solid black;
 		padding-left: 20px;
 		padding-right: 20px;
