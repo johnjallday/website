@@ -1,23 +1,30 @@
+
 <script>
   import { onMount } from 'svelte';
   import { createAccordion, melt } from '@melt-ui/svelte';
   import { slide } from 'svelte/transition';
 
+	export let filePath;
+
   let items = [];
+
 
   const {
     elements: { root, content, item, trigger },
     helpers: { isSelected },
   } = createAccordion();
 
-  onMount(async () => {
-    const response = await fetch('/my_logs.json');
-    items = await response.json();
-  });
+ 	onMount(async () => {
+    if (filePath) {
+      const response = await fetch(filePath);
+      items = await response.json();
+    }
+	});
 </script>
  
 <div class="block root" use:melt={$root}>
-  {#each items as { id, title, description }}
+	<h2>active projects.</h2>
+  {#each items as { id, group, description }}
     <div use:melt={$item(id)} class="item">
       <h2>
         <button use:melt={$trigger(id)} class="trigger">

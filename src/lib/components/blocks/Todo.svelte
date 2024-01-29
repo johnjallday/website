@@ -1,56 +1,61 @@
-
 <script>
-  import { createTabs, melt } from '@melt-ui/svelte';
-  import { crossfade } from 'svelte/transition';
-  import { cubicInOut } from 'svelte/easing';
   import { onMount } from 'svelte';
+  import { writable } from 'svelte/store';
+
+  export let filePath;
 
   let todo_list = {};
+  let filter = writable(new Set()); // Store a set of active filters
 
   onMount(async () => {
-    const response = await fetch('/todo_list.json');
-    todo_list = await response.json();
+    if (typeof window !== 'undefined') {
+      const response = await fetch(filePath);
+      todo_list = await response.json();
+    }
   });
 
-  const {
-    elements: { root, list, content, trigger },
-    states: { value },
-  } = createTabs({
-    defaultValue: 'tab-1',
-  });
+  // Function to toggle the filter
+  function toggleFilter(category) {
+    filter.update(currentFilters => {
+      const newFilters = new Set(currentFilters);
+      if (newFilters.has(category)) {
+        newFilters.delete(category); // Remove the filter if it's already set
+      } else {
+        newFilters.add(category); // Add the filter if it's not set
+      }
+      return newFilters;
+    });
+  }
 
-  const triggers = [
-    { id: 'tab-1', title: 'Music' },
-    { id: 'tab-2', title: 'Website' },
-    { id: 'tab-3', title: 'Programming' },
-  ];
-
-  const [send, receive] = crossfade({
-    duration: 250,
-    easing: cubicInOut,
-  });
+  // Function to clear all filters
+  function clearAllFilters() {
+    filter.set(new Set());
+  }
 </script>
 
-<div class="block todo" use:melt={$root}>
+<div class="block todo">
   <h2>To-do list.</h2>
-  <div use:melt={$list}>
-    {#each triggers as triggerItem}
-      <button use:melt={$trigger(triggerItem.id)} class="trigger relative">
-        {triggerItem.title}
-        {#if $value === triggerItem.id}
-          <div in:send={{ key: 'trigger' }} out:receive={{ key: 'trigger' }} />
-        {/if}
-      </button>
-    {/each}
-  </div>
 
-  {#each triggers as triggerItem}
-    <div use:melt={$content(triggerItem.id)} class="grow bg-white p-5">
-      {#if todo_list[triggerItem.title]}
-        {#each todo_list[triggerItem.title].todo as item}
+  <!-- Toggle Buttons for Each Category -->
+  {#each Object.keys(todo_list) as category}
+    <button on:click={() => toggleFilter(category)}>
+      {category} {$filter.has(category) ? '✓' : ''}
+    </button>
+  {/each}
+
+  <!-- Button to Clear All Filters -->
+  <button on:click={clearAllFilters}>
+    Clear All Filters
+  </button>
+
+  {#each Object.keys(todo_list) as category}
+    {#if !$filter.size || $filter.has(category)}
+      <div class="category-section">
+        <h3>{category}</h3>
+        {#each todo_list[category]?.todo as item}
           <p>{item}</p>
         {/each}
-      {/if}
-    </div>
+      </div>
+    {/if}
   {/each}
 </div>

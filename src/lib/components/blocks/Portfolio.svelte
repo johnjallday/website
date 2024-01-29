@@ -2,7 +2,6 @@
 <script>
 	import Playlist from '$lib/components/parts/Playlist.svelte';
 	import { onMount } from 'svelte';
-
 	import '$lib/css/portfolio.css';
 
   let items = [
