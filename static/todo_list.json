@@ -3,7 +3,7 @@
     "todo": ["demo - kelly", "demo - imin"]
   },
   "Website": {
-    "todo": ["update manager", "Contact Page", "Async Load Blog Json", "To-do list show everything", "domain", "Fractal CSS", "Header Redesign"]
+    "todo": ["update manager", "Contact Page", "To-do list buttons", "domain", "Fractal CSS", "Contact Button", "Project-Studio"]
   },
   "Programming": {
     "todo": ["backend duckdb setup", "auto emailer", "discord json sync"]

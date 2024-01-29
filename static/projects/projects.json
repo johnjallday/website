@@ -1,0 +1,17 @@
+[
+  {
+    "id": "item-1",
+    "group": "Music",
+		"projects":["Monthly Beats", "KPop Demos", "Publishing"]
+  },
+  {
+    "id": "item-2",
+    "group": "Programming",
+    "projects": ["Website", "AI Helper Python", "Website Manager"]
+  },
+  {
+    "id": "item-3",
+    "group": "Personal",
+    "projects": ["Youtube Spend Log"]
+  }
+]

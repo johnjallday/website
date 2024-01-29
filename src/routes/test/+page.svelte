@@ -1,6 +1,4 @@
-<script>
-	import ContactDialog from '$lib/components/parts/ContactDialog.svelte';
-</script>
-
-<div>Test</div>
-<ContactDialog/>
+<form method="POST" action="/postdata">
+  <label>Email<input name="email" type="email" /></label>
+  <button>Log in</button>
+</form>

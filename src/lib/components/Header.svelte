@@ -1,103 +1,71 @@
-
 <!-- Header.svelte -->
 <script>
-  export let showBackground = false;
-	import SocialNav from '$lib/components/parts/SocialNav.svelte'; 
+  export let activePath = '';
 </script>
 
-<header class:has-background={showBackground}>
-  <div class="background">
-    <div class="hero_area">
-      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="#3a2a00" />
-        </g>
-      </svg>
-    </div>
-  </div>
+<nav class="page_nav">
+  <button id="buttonMain" class={activePath === '/' ? 'selected' : ''}>
+    <a href="/">Main</a>
+  </button>
+  <button id="buttonProjects" class={activePath === '/dashboard' ? 'selected' : ''}>
+    <a href="/dashboard">Dashboard</a>
+  </button>
+  <button id="buttonBlog" class={activePath === '/blog' ? 'selected' : ''}>
+    <a href="/blog">Blog</a>
+  </button>
+</nav>
 
-	<SocialNav/>
-
-	<nav class="page_nav">
-		<a href="/">Main</a>
-		<a href="/projects">Projects</a>
-		<a href="/blog">Blog</a>
-	</nav>
-</header>
 
 <style>
-  /* Waves Animation start*/
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Push the background behind the content */
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .hero_area {
-    position: relative;
-    height: 50vh;
-    background-color: #ffb800;
+  .page_nav {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
-  .waves {
-    position: absolute;
-    width: 100%;
-    height: 15vh;
-    min-height: 100px;
-    max-height: 150px;
-    bottom: 0;
-    left: 0;
-  }
+	.selected {
+  	background-color: #ffe9b0; /* Selected state background */
+  	color: #3a2a00; /* Selected state text color */
+	}
 
-  .parallax>use {
-    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
-  }
 
-  .parallax>use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
+	button {
+  	background-color: #3a2a00;
+  	color: #ffe9b0;
+  	font-size: 24px;
+  	border-radius: 8px;
+  	border: none; /* Removes the default button border */
+  	padding: 5px 20px; /* Adjust padding as needed */
+  	width: 150px; /* Sets a fixed width for all buttons */
+  	height: 40px; /* Sets a fixed height for all buttons */
+  	text-align: center; /* Centers text inside the button */
+  	display: flex; /* Enables flexbox for centering content */
+  	justify-content: center; /* Horizontally centers the link inside the button */
+  	align-items: center; /* Vertically centers the link inside the button */
+		outline: none;
+		transition: background-color 0.1s, color 0.1s;
+	}
 
-  .parallax>use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
+	button:hover {
+    /* Styles for when the button is hovered over */
+  	background-color: #ffe9b0; /* Example: change background color on hover */
+  	color: #3a2a00; /* Example: change text color on hover */
+		border: 3px solid #3a2a00;
+	}
 
-  .parallax>use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
 
-  .parallax>use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-
-  @keyframes move-forever {
-    0% {
-      transform: translate3d(-90px, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(85px, 0, 0);
-    }
-  }
-
-  /* Shrinking for mobile */
-  @media (max-width: 768px) {
-    .waves {
-      height: 40px;
-      min-height: 40px;
-    }
-  }
-  /* Waves Animation end */
+	button a {
+  	text-decoration: none;
+  	color: inherit;
+  	display: block; /* Makes the link fill the button for better clickability */
+  	width: 100%; /* Ensures the link covers the entire area of the button */
+	}
 </style>

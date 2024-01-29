@@ -4,7 +4,7 @@ ul {
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
-	border-bottom: 1px solid #dee2e6;
+	border-bottom: 1px solid #3a2a00;
 	color: #3a2a00;
 }
 li {
@@ -25,5 +25,7 @@ span:hover {
 }
 
 li.active span {
-    background-color: #ffce4e;
+  background-color: #ffce4e;
+  border-color: #3a2a00; /* Add border color for active span */
+  border-bottom: 0px solid #3a2a00; /* Match background color to cover ul's border */
 }

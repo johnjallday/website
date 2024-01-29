@@ -1,10 +1,27 @@
+<script>
+	import { Instagram, Home, Mail, Github } from 'lucide-svelte';
+
+</script>
+
 <nav class="container">
-	<a href="/"><img src="/home-button.svg" height="25"></a>
-  <a href="/contact" title="email icons"><img src="/mail-inbox-app.png" height="25"></a>
+	<a href="/">
+		<Home size={25} color="#ffe9b0" />
+	</a>
+	<a href="/contact">
+		<Mail size={25} color="#ffe9b0"/>
+	</a>
+	<a href="https://instagram.com/johnj.alldayok">
+		<Instagram size={25} color="#ffe9b0"/>
+	</a>
   <a href="https://github.com/johnjallday/">
-    <img src="/github-mark.png" alt="GitHub Mark" width="25" height="25" />
-  </a>
-  <a href="https://instagram.com/johnj.alldayok">
-    <img src="/Instagram_Glyph_Black.png" alt="instagram" width="25" height="25" />
+		<Github size={25} color="#ffe9b0"/>
   </a>
 </nav>
+
+<style>
+	.container {
+		padding: 5px;
+	}
+
+</style>
+
